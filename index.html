@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>gator</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <link rel="stylesheet" href="styles.css" />
+    <title>temp</title>
   </head>
 
   <body>
-    <h2>ワニのすべて</h2>
-    <div class="green">
-
-      <input type="text">
-
-      <br>
-
-      <button type="button">
-        ワニ出現！
-      </button>
-
+    <div>
+      <span id="frWord"></span>
     </div>
-    <div class="blue"><p></p></div>
-    <script src="script.js"></script>
+    <div style="text-align: center">
+      <img src="./picture/base.jpg" id="image">
+    </div>
+    <div>
+      <span id="rrWord"></span>
+    </div>
+    <div style="text-align: center">
+      <label for="month">Month</label>
+      <input type="text" id="month" class="input" >
+      <label for="day">Day</label>
+      <input type="text" id="day" class="input" >
+      <br>
+      <input type="button" value="submit" id="submit">
+    </div>
+    <script type="text/javascript" src="script.js"></script>
   </body>
-
 </html>
