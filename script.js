@@ -1,15 +1,15 @@
 'use strict'
 // 1行目に記載している 'use strict' は削除しないでください
 
-const frErrorWords = ["どんだけ～！", "何か間違ってるよ"];
-const frSummerWords = ["今日も暑いね", "夏の思い出だね", "夏祭り楽しかったね"];
+const frErrorWords = ["どんだけー！", "何か間違ってるよ"];
+const frSummerWords = ["今日も暑いね", "夏の思い出だね", "夏祭りも楽しかったね"];
 const frWinterWords = ["今日も寒いね", "クリスマス楽しかったね"];
-const frAutumnWords = ["秋の思い出だね", "紅葉がきれいだったね", "ハロウィン楽しかったね"];
+const frAutumnWords = ["秋の思い出だね", "紅葉がきれいだったね", "ハロウィンも楽しかったね"];
 const frSpringWords = ["春の思い出だね", "入園式を思い出すね", "お花がきれいだったね"];
 const frTodayWords = ["今日はプレゼンの日だね", "きっと、今日のプレゼン上手くいくよ"];
 const frbirthDay = ["パパ、お誕生日おめでとう！"]
 
-const rrErrorWords = ["そんな日付はないよ"];
+const rrErrorWords = ["そんな日付はないです"];
 const rrNormalWords = ["疲れてるなら休んでね", "ちょっと、甘い物でも食べて休憩してね", "無理しないでね。パパのこと想っているよ", "パパ、またどっか遊びに行こうね！"];
 const rrTodayWords = ["がんばってね！", "僕たちも応援してるよ!"];
 const rrbirthDay = ["Happy Birthday!"]
@@ -59,7 +59,13 @@ function showImage() {
                 frMsg = frbirthDay;
                 rrMsg = rrbirthDay;
                 document.getElementById('image').src = imgUrl;
-
+                message(frMsg, rrMsg);
+                return;
+            } else if (month === 8 && dayElem.value === "8") {
+                imgUrl = imgUrlbase + "event_2.jpg";
+                frMsg = frTodayWords;
+                rrMsg = rrTodayWords;
+                document.getElementById('image').src = imgUrl;
                 message(frMsg, rrMsg);
                 return;
             } else if (3 > month || month > 11) {
@@ -74,8 +80,8 @@ function showImage() {
                 message(frMsg, rrMsg);
             } else if (10 > month && month > 5) {
                 seasonImg = summerImg;
-                frMsg = frSummerWords.concat(frTodayWords);
-                rrMsg = rrNormalWords.concat(rrTodayWords);
+                frMsg = frSummerWords;
+                rrMsg = rrNormalWords;
                 message(frMsg, rrMsg);
             } else if (6 > month && month > 2) {
                 seasonImg = springImg;
