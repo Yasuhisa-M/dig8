@@ -1,6 +1,38 @@
 'use strict'
 // 1行目に記載している 'use strict' は削除しないでください
 
+const container = document.querySelector(".image");
+for (let i =0; i < 40; i++) {
+    const blocks = document.createElement('img');
+    blocks.src = './picture/heart.png'; 
+    blocks.classList.add("block");
+    container.appendChild(blocks);
+}
+
+function animateBlocks() {
+    anime({
+        targets: ".block",
+        translateX: function() {
+            return anime.random(-400, 400);
+        },
+        translateY: function() {
+            return anime.random(-650, 30);
+        },
+        scale: function() {
+            return anime.random(1, 3);
+        },
+        duration: 3500,
+        delay: anime.stagger(30),
+        complete: function() {
+            setTimeout(function(){
+                document.querySelectorAll(".block").remove()
+            },1000)
+        }
+    })
+}
+
+
+
 const frErrorWords = ["どんだけー！", "何か間違ってるよ"];
 const frSummerWords = ["今日も暑いね", "夏の思い出だね", "夏祭りも楽しかったね"];
 const frWinterWords = ["今日も寒いね", "クリスマス楽しかったね"];
@@ -63,6 +95,7 @@ function showImage() {
                 message(frMsg, rrMsg);
                 document.getElementsByClassName("message")[0].animate(imgKeyframes, 2000);
                 document.getElementsByClassName("message")[1].animate(imgKeyframes, 2000);
+                animateBlocks()
                 return;
             } else if (month === 8 && dayElem.value === "8") {
                 imgUrl = imgUrlbase + "event_2.jpg";
@@ -72,6 +105,7 @@ function showImage() {
                 message(frMsg, rrMsg);
                 document.getElementsByClassName("message")[0].animate(imgKeyframes, 2000);
                 document.getElementsByClassName("message")[1].animate(imgKeyframes, 2000);
+                animateBlocks()
                 return;
             } else if (3 > month || month > 11) {
                 seasonImg = winterImg;
@@ -101,6 +135,7 @@ function showImage() {
                 message(frMsg, rrMsg);
                 document.getElementsByClassName("message")[0].animate(imgKeyframes, 2000);
                 document.getElementsByClassName("message")[1].animate(imgKeyframes, 2000);
+                animateBlocks()
                 return;
             }
             let randNum = Math.floor(Math.random() * seasonImg.length);
@@ -110,6 +145,7 @@ function showImage() {
     document.getElementById('image').src = imgUrl;
     document.getElementsByClassName("message")[0].animate(imgKeyframes, 2000);
     document.getElementsByClassName("message")[1].animate(imgKeyframes, 2000);
+    animateBlocks()
 }
 
 const imgKeyframes = {
