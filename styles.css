@@ -1,6 +1,91 @@
-img {
-    height: 70vh;
+body {
+    font-family: 'Yusei Magic', sans-serif;
+    background-color: rgb(0, 194, 212);
+    color: white;
 }
+
+h1 {
+    font-size: 40px;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.image {
+    position: relative;
+    /* height: 70vh; */
+}
+
+img {
+    height: 65vh;
+    border-radius: 30px;
+    border-style: solid;
+    border-color: yellow;
+    border-width: 6px;
+}
+
+.message {
+    position: absolute;
+    font-size: 40px;
+    color: white;
+    left: 50%;
+    background-color: rgba(0, 110, 255, 0.5);
+}
+
+#frWord {
+    top: 5px;
+    transform: translate(-50%);
+}
+
+#rrWord {
+    bottom: 0;
+    transform: translate(-50%, -11px);
+}
+
+.input_msg {
+    font-size: x-large;
+}
+
 .input {
-    width:100px;
+    width: 60px;
+    height: 40px;
+    margin-left: 20px;
+    border-radius: 5px;
+    border-style: none;
+    font-size: xx-large;
+}
+
+.input:hover {
+    border-style: solid;
+    border-color: yellow;
+    border-width: 3px;
+}
+
+
+.label {
+    font-size: xx-large;
+}
+
+#submit {
+    width: 100px;
+    height: 50px;
+    margin-left: 40px;
+    color: yellow;
+    background-color: rgb(23, 201, 0);
+    border-radius: 8px;
+    border-style: solid;
+    border-color: yellow;
+    border-width: 3px;
+    font-size: x-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+}
+
+#submit:hover {
+    width: 105px;
+    height: 55px;
+    border-width: 6px;
+    background-color: rgb(45, 255, 18);
+    color: rgb(255, 143, 206);
 }

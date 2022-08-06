@@ -10,7 +10,7 @@ const frTodayWords = ["今日はプレゼンの日だね", "きっと、今日�
 const frbirthDay = ["パパ、お誕生日おめでとう！"]
 
 const rrErrorWords = ["そんな日付はないです"];
-const rrNormalWords = ["疲れてるなら休んでね", "ちょっと、甘い物でも食べて休憩してね", "無理しないでね。パパのこと想っているよ", "パパ、またどっか遊びに行こうね！"];
+const rrNormalWords = ["疲れてるなら休んでね", "ちょっと、甘い物でも食べて休憩してね", "無理しないでね。ちょっと休もう", "パパ、またどこか遊びに行こうね！"];
 const rrTodayWords = ["がんばってね！", "僕たちも応援してるよ!"];
 const rrbirthDay = ["Happy Birthday!"]
 
@@ -53,6 +53,7 @@ function showImage() {
             frMsg.push(frErrorWords[0]);
             rrMsg = rrErrorWords;
             message(frMsg, rrMsg);
+            document.getElementsByTagName("audio")[0].src = imgUrlbase + "error.mp3";
         } else {
             if (month === 8 && dayElem.value === "17") {
                 imgUrl = imgUrlbase + "event_1.jpg";
@@ -60,6 +61,8 @@ function showImage() {
                 rrMsg = rrbirthDay;
                 document.getElementById('image').src = imgUrl;
                 message(frMsg, rrMsg);
+                document.getElementsByClassName("message")[0].animate(imgKeyframes, 1000);
+                document.getElementsByClassName("message")[1].animate(imgKeyframes, 1000);
                 return;
             } else if (month === 8 && dayElem.value === "8") {
                 imgUrl = imgUrlbase + "event_2.jpg";
@@ -67,6 +70,8 @@ function showImage() {
                 rrMsg = rrTodayWords;
                 document.getElementById('image').src = imgUrl;
                 message(frMsg, rrMsg);
+                document.getElementsByClassName("message")[0].animate(imgKeyframes, 1000);
+                document.getElementsByClassName("message")[1].animate(imgKeyframes, 1000);
                 return;
             } else if (3 > month || month > 11) {
                 seasonImg = winterImg;
@@ -94,6 +99,8 @@ function showImage() {
                 frMsg.push(frErrorWords[1]);
                 rrMsg = rrErrorWords;
                 message(frMsg, rrMsg);
+                document.getElementsByClassName("message")[0].animate(imgKeyframes, 1000);
+                document.getElementsByClassName("message")[1].animate(imgKeyframes, 1000);
                 return;
             }
             let randNum = Math.floor(Math.random() * seasonImg.length);
@@ -101,6 +108,12 @@ function showImage() {
         }
     }
     document.getElementById('image').src = imgUrl;
+    document.getElementsByClassName("message")[0].animate(imgKeyframes, 1000);
+    document.getElementsByClassName("message")[1].animate(imgKeyframes, 1000);
+}
+
+const imgKeyframes = {
+    opacity: ["0", "1"],
 }
 
 btn.addEventListener("click", showImage);
