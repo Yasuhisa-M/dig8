@@ -13,7 +13,7 @@ function animateBlocks() {
     anime({
         targets: ".block",
         translateX: function() {
-            return anime.random(-800, 800);
+            return anime.random(-1000, 1000);
         },
         translateY: function() {
             return anime.random(-650, 30);
