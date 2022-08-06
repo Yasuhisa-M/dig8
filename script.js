@@ -61,8 +61,8 @@ function showImage() {
                 rrMsg = rrbirthDay;
                 document.getElementById('image').src = imgUrl;
                 message(frMsg, rrMsg);
-                document.getElementsByClassName("message")[0].animate(imgKeyframes, 2000);
-                document.getElementsByClassName("message")[1].animate(imgKeyframes, 2000);
+                document.getElementsByClassName("message")[0].animate(imgKeyframes, 1000);
+                document.getElementsByClassName("message")[1].animate(imgKeyframes, 1000);
                 return;
             } else if (month === 8 && dayElem.value === "8") {
                 imgUrl = imgUrlbase + "event_2.jpg";
@@ -70,8 +70,8 @@ function showImage() {
                 rrMsg = rrTodayWords;
                 document.getElementById('image').src = imgUrl;
                 message(frMsg, rrMsg);
-                document.getElementsByClassName("message")[0].animate(imgKeyframes, 2000);
-                document.getElementsByClassName("message")[1].animate(imgKeyframes, 2000);
+                document.getElementsByClassName("message")[0].animate(imgKeyframes, 1000);
+                document.getElementsByClassName("message")[1].animate(imgKeyframes, 1000);
                 return;
             } else if (3 > month || month > 11) {
                 seasonImg = winterImg;
@@ -99,8 +99,8 @@ function showImage() {
                 frMsg.push(frErrorWords[1]);
                 rrMsg = rrErrorWords;
                 message(frMsg, rrMsg);
-                document.getElementsByClassName("message")[0].animate(imgKeyframes, 2000);
-                document.getElementsByClassName("message")[1].animate(imgKeyframes, 2000);
+                document.getElementsByClassName("message")[0].animate(imgKeyframes, 1000);
+                document.getElementsByClassName("message")[1].animate(imgKeyframes, 1000);
                 return;
             }
             let randNum = Math.floor(Math.random() * seasonImg.length);
@@ -108,8 +108,8 @@ function showImage() {
         }
     }
     document.getElementById('image').src = imgUrl;
-    document.getElementsByClassName("message")[0].animate(imgKeyframes, 2000);
-    document.getElementsByClassName("message")[1].animate(imgKeyframes, 2000);
+    document.getElementsByClassName("message")[0].animate(imgKeyframes, 1000);
+    document.getElementsByClassName("message")[1].animate(imgKeyframes, 1000);
 }
 
 const imgKeyframes = {
